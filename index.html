@@ -14,6 +14,7 @@
       background: #000;
       color: #fff;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
@@ -25,14 +26,10 @@
       z-index: 10;
     }
     nav h1 { letter-spacing: 5px; font-size: 20px; }
-    nav a {
-      color: #aaa;
-      margin-left: 25px;
-      text-decoration: none;
-      font-size: 14px;
-    }
+    nav a { color: #aaa; margin-left: 25px; text-decoration: none; font-size: 14px; }
     nav a:hover { color: #fff; }
 
+    /* Hero / Graffiti header */
     header {
       height: 100vh;
       display: flex;
@@ -41,7 +38,9 @@
       align-items: center;
       text-align: center;
       padding: 20px;
-      background: url('https://images.unsplash.com/photo-1612832020330-8968576a7ed7?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://images.unsplash.com/photo-1621141039705-bb0f78e78a3a?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
     }
     header h2 {
       font-size: 70px;
@@ -51,9 +50,9 @@
     }
     header p {
       max-width: 600px;
-      color: #aaa;
+      color: #fff;
       line-height: 1.6;
-      text-shadow: 1px 1px 3px #000;
+      text-shadow: 1px 1px 5px #000;
     }
     .btn {
       margin-top: 40px;
@@ -69,6 +68,7 @@
       color: #000;
     }
 
+    /* Sections */
     section {
       padding: 120px 40px;
       text-align: center;
@@ -85,9 +85,8 @@
       line-height: 1.7;
     }
 
-    .signup {
-      margin-top: 40px;
-    }
+    /* Signup form */
+    .signup { margin-top: 40px; }
     .signup input {
       padding: 14px;
       width: 260px;
@@ -107,6 +106,7 @@
       color: #000;
     }
 
+    /* Contact buttons */
     .contact-buttons {
       margin-top: 40px;
       display: flex;
@@ -125,10 +125,7 @@
       align-items: center;
       gap: 10px;
     }
-    .contact-buttons a:hover {
-      background: #fff;
-      color: #000;
-    }
+    .contact-buttons a:hover { background: #fff; color: #000; }
 
     /* Coming soon products */
     .products {
@@ -144,6 +141,7 @@
       width: 200px;
       text-align: center;
       transition: 0.3s;
+      background: rgba(0,0,0,0.6);
     }
     .product-card:hover {
       background: #fff;
@@ -176,9 +174,7 @@
 
 <nav>
   <h1>HAZWAD</h1>
-  <div>
-    <a href="#contact">CONTACT</a>
-  </div>
+  <div><a href="#contact">CONTACT</a></div>
 </nav>
 
 <header>
@@ -214,9 +210,7 @@
 
   <!-- Contact buttons -->
   <div class="contact-buttons">
-    <!-- WhatsApp -->
     <a href="https://wa.me/60184739157" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-    <!-- Instagram -->
     <a href="https://www.instagram.com/10_xrawad" target="_blank"><i class="fab fa-instagram"></i>Instagram DM</a>
   </div>
 
