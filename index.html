@@ -4,42 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HAZWAD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: #000;
       color: #fff;
-      text-align: center;
     }
-    header {
-      padding: 90px 20px;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 10;
     }
-    h1 {
-      font-size: 64px;
-      letter-spacing: 6px;
+    nav h1 {
+      letter-spacing: 5px;
+      font-size: 20px;
     }
-    p {
+    nav a {
       color: #aaa;
+      margin-left: 25px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover { color: #fff; }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h2 {
+      font-size: 70px;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+    header p {
       max-width: 600px;
-      margin: 20px auto;
+      color: #aaa;
+      line-height: 1.6;
     }
     .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 36px;
+      margin-top: 40px;
+      padding: 15px 45px;
       border: 1px solid #fff;
-      color: #fff;
       text-decoration: none;
+      color: #fff;
+      letter-spacing: 2px;
       transition: 0.3s;
     }
     .btn:hover {
       background: #fff;
       color: #000;
     }
+
+    section {
+      padding: 120px 40px;
+      text-align: center;
+    }
+    section h3 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+    section p {
+      max-width: 700px;
+      margin: auto;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .card {
+      background: #111;
+      padding: 30px;
+      border-radius: 16px;
+    }
+    .img {
+      height: 220px;
+      background: #222;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
     footer {
-      margin-top: 120px;
-      padding: 20px;
+      padding: 40px;
+      text-align: center;
       color: #666;
       font-size: 14px;
     }
@@ -47,14 +116,56 @@
 </head>
 <body>
 
-<header>
+<nav>
   <h1>HAZWAD</h1>
+  <div>
+    <a href="#about">ABOUT</a>
+    <a href="#shop">SHOP</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<header>
+  <h2>HAZWAD</h2>
   <p>
     Streetwear built on identity, ambition, and confidence.
-    This isn’t just clothing — it’s a mindset.
+    Designed for those who move different.
   </p>
-  <a href="#" class="btn">DROP COMING SOON</a>
+  <a class="btn" href="#shop">DROP COMING SOON</a>
 </header>
+
+<section id="about">
+  <h3>ABOUT</h3>
+  <p>
+    HAZWAD is more than clothing. It’s a statement.
+    Inspired by hustle culture, discipline, and standing out
+    when the world wants you to blend in.
+  </p>
+</section>
+
+<section id="shop">
+  <h3>FEATURED DROP</h3>
+  <div class="products">
+    <div class="card">
+      <div class="img">HOODIE IMAGE</div>
+      <p>HAZWAD Cropped Hoodie</p>
+    </div>
+    <div class="card">
+      <div class="img">TEE IMAGE</div>
+      <p>HAZWAD Statement Tee</p>
+    </div>
+    <div class="card">
+      <div class="img">CAP IMAGE</div>
+      <p>HAZWAD Cap</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h3>CONTACT</h3>
+  <p>For collabs & inquiries</p>
+  <p><strong>Instagram:</strong> @hazwad</p>
+</section>
 
 <footer>
   © 2026 HAZWAD. All rights reserved.
