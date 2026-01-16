@@ -84,26 +84,26 @@
       line-height: 1.7;
     }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
+    .signup {
+      margin-top: 40px;
     }
-    .card {
-      background: #111;
-      padding: 30px;
-      border-radius: 16px;
+    .signup input {
+      padding: 14px;
+      width: 260px;
+      border: none;
+      outline: none;
+      margin-right: 10px;
     }
-    .img {
-      height: 220px;
-      background: #222;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #555;
-      margin-bottom: 20px;
+    .signup button {
+      padding: 14px 30px;
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+    .signup button:hover {
+      background: #fff;
+      color: #000;
     }
 
     footer {
@@ -119,8 +119,6 @@
 <nav>
   <h1>HAZWAD</h1>
   <div>
-    <a href="#about">ABOUT</a>
-    <a href="#shop">SHOP</a>
     <a href="#contact">CONTACT</a>
   </div>
 </nav>
@@ -129,42 +127,25 @@
   <h2>HAZWAD</h2>
   <p>
     Streetwear built on identity, ambition, and confidence.
-    Designed for those who move different.
   </p>
-  <a class="btn" href="#shop">DROP COMING SOON</a>
+  <a class="btn" href="#contact">DROP COMING SOON</a>
 </header>
 
-<section id="about">
-  <h3>ABOUT</h3>
-  <p>
-    HAZWAD is more than clothing. It’s a statement.
-    Inspired by hustle culture, discipline, and standing out
-    when the world wants you to blend in.
-  </p>
-</section>
-
-<section id="shop">
-  <h3>FEATURED DROP</h3>
-  <div class="products">
-    <div class="card">
-      <div class="img">HOODIE IMAGE</div>
-      <p>HAZWAD Cropped Hoodie</p>
-    </div>
-    <div class="card">
-      <div class="img">TEE IMAGE</div>
-      <p>HAZWAD Statement Tee</p>
-    </div>
-    <div class="card">
-      <div class="img">CAP IMAGE</div>
-      <p>HAZWAD Cap</p>
-    </div>
-  </div>
-</section>
-
 <section id="contact">
-  <h3>CONTACT</h3>
-  <p>For collabs & inquiries</p>
-  <p><strong>Instagram:</strong> @hazwad</p>
+  <h3>STAY CONNECTED</h3>
+  <p>Sign up to get notified about drops.</p>
+
+  <form class="signup" action="mailto:hazwadbrand@gmail.com" method="post" enctype="text/plain">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">SIGN UP</button>
+  </form>
+
+  <p style="margin-top:40px;">Contact Number:</p>
+  <p><strong>+60184739157</strong></p>
+
+  <p style="margin-top:40px; font-size:13px; color:#777;">
+    Official domain coming soon: <strong>hazwad.com</strong>
+  </p>
 </section>
 
 <footer>
@@ -173,3 +154,4 @@
 
 </body>
 </html>
+
