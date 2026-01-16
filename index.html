@@ -18,15 +18,15 @@
   nav a { color:#fff; margin-left:25px; text-decoration:none; font-size:14px; font-weight:600; }
   nav a:hover { color:#f0f0f0; }
 
-  /* Hero Section */
+  /* Hero Section - static street/poster background */
   header {
     height:100vh; 
     display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px;
-    background: url('https://images.unsplash.com/photo-1526318472351-3d0f7f107a62?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    background: url('https://i.imgur.com/4QfKuz1.png') no-repeat center center/cover;
   }
   header h2 { font-size:70px; letter-spacing:10px; margin-bottom:20px; font-weight:800; color:#fff; text-transform:uppercase; }
-  header p { max-width:600px; line-height:1.6; color:#fff; font-weight:500; }
-  .btn { margin-top:40px; padding:15px 45px; border:2px solid #fff; text-decoration:none; color:#fff; letter-spacing:2px; font-weight:600; transition:0.2s; }
+  header p { max-width:600px; line-height:1.6; color:#fff; font-weight:600; font-size:20px; }
+  .btn { margin-top:40px; padding:15px 45px; border:2px solid #fff; text-decoration:none; color:#fff; letter-spacing:2px; font-weight:600; transition:0.2s; display:inline-block; }
   .btn:hover { background:#fff; color:#000; }
 
   section { padding:120px 40px; text-align:center; }
@@ -55,6 +55,7 @@
 
   @media(max-width:768px){
     header h2 { font-size:50px; }
+    header p { font-size:18px; }
     .signup input { width:100%; margin-bottom:10px; }
     .signup button { width:100%; }
     .products { flex-direction:column; gap:20px; }
