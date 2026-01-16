@@ -1,174 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HAZWAD</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #000;
-      color: #fff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAZWAD</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family: 'Montserrat', sans-serif; background:#000; color:#fff; overflow-x:hidden; }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      position: fixed;
-      width: 100%;
-      background: rgba(0,0,0,0.9);
-      z-index: 10;
-    }
-    nav h1 { letter-spacing: 5px; font-size: 20px; }
-    nav a { color: #aaa; margin-left: 25px; text-decoration: none; font-size: 14px; }
-    nav a:hover { color: #fff; }
+  nav { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; position:fixed; width:100%; background:rgba(0,0,0,0.9); z-index:10; }
+  nav h1 { letter-spacing:5px; font-size:20px; }
+  nav a { color:#aaa; margin-left:25px; text-decoration:none; font-size:14px; }
+  nav a:hover { color:#fff; }
 
-    /* Hero / Graffiti header */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      background:
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('https://images.unsplash.com/photo-1621141039705-bb0f78e78a3a?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-    }
-    header h2 {
-      font-size: 70px;
-      letter-spacing: 10px;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 5px #000;
-    }
-    header p {
-      max-width: 600px;
-      color: #fff;
-      line-height: 1.6;
-      text-shadow: 1px 1px 5px #000;
-    }
-    .btn {
-      margin-top: 40px;
-      padding: 15px 45px;
-      border: 1px solid #fff;
-      text-decoration: none;
-      color: #fff;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
+  /* Hero Section */
+  header {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:url('https://images.unsplash.com/photo-1621141039705-bb0f78e78a3a?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+    position:relative;
+    overflow:hidden;
+  }
+  /* Animated color splashes */
+  header::before {
+    content:"";
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(45deg, #ff3c3c, #ffdb3c, #3cff3c, #3c9eff, #db3cff);
+    mix-blend-mode:screen;
+    animation: moveGradient 20s linear infinite;
+    opacity:0.6;
+  }
+  @keyframes moveGradient {
+    0% { transform: translateX(-50%) translateY(-50%) rotate(0deg);}
+    100% { transform: translateX(50%) translateY(50%) rotate(360deg);}
+  }
 
-    /* Sections */
-    section {
-      padding: 120px 40px;
-      text-align: center;
-    }
-    section h3 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      letter-spacing: 4px;
-    }
-    section p {
-      max-width: 700px;
-      margin: auto;
-      color: #aaa;
-      line-height: 1.7;
-    }
+  header h2 { font-size:70px; letter-spacing:10px; margin-bottom:20px; color:#fff; text-shadow:0 0 15px #0ff,0 0 30px #ff0; position:relative; z-index:1; }
+  header p { max-width:600px; color:#fff; line-height:1.6; text-shadow:0 0 10px #000; position:relative; z-index:1; }
+  .btn { margin-top:40px; padding:15px 45px; border:1px solid #fff; text-decoration:none; color:#fff; letter-spacing:2px; transition:0.3s; position:relative; z-index:1; }
+  .btn:hover { background:#0ff; color:#000; border-color:#0ff; }
 
-    /* Signup form */
-    .signup { margin-top: 40px; }
-    .signup input {
-      padding: 14px;
-      width: 260px;
-      border: none;
-      outline: none;
-      margin-right: 10px;
-    }
-    .signup button {
-      padding: 14px 30px;
-      border: 1px solid #fff;
-      background: transparent;
-      color: #fff;
-      cursor: pointer;
-    }
-    .signup button:hover {
-      background: #fff;
-      color: #000;
-    }
+  section { padding:120px 40px; text-align:center; position:relative; z-index:1; }
+  section h3 { font-size:36px; margin-bottom:20px; letter-spacing:4px; text-shadow:0 0 10px #000; }
+  section p { max-width:700px; margin:auto; color:#aaa; line-height:1.7; }
 
-    /* Contact buttons */
-    .contact-buttons {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .contact-buttons a {
-      padding: 14px 25px;
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: 1px;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .contact-buttons a:hover { background: #fff; color: #000; }
+  /* Signup Form */
+  .signup { margin-top:40px; }
+  .signup input { padding:14px; width:260px; border:none; outline:none; margin-right:10px; }
+  .signup button { padding:14px 30px; border:1px solid #fff; background:transparent; color:#fff; cursor:pointer; transition:0.3s; }
+  .signup button:hover { background:#0ff; color:#000; border-color:#0ff; }
 
-    /* Coming soon products */
-    .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-top: 60px;
-    }
-    .product-card {
-      border: 1px solid #fff;
-      padding: 30px 20px;
-      width: 200px;
-      text-align: center;
-      transition: 0.3s;
-      background: rgba(0,0,0,0.6);
-    }
-    .product-card:hover {
-      background: #fff;
-      color: #000;
-    }
-    .product-card h4 {
-      margin-bottom: 10px;
-      font-size: 24px;
-      letter-spacing: 2px;
-    }
-    .product-card p { font-size: 14px; color: #aaa; }
-    .product-card:hover p { color: #000; }
+  /* Contact Buttons */
+  .contact-buttons { margin-top:40px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+  .contact-buttons a { padding:14px 25px; border:1px solid #fff; color:#fff; text-decoration:none; letter-spacing:1px; display:flex; align-items:center; gap:10px; transition:0.3s; }
+  .contact-buttons a:hover { background:#0ff; color:#000; border-color:#0ff; }
 
-    footer {
-      padding: 40px;
-      text-align: center;
-      color: #666;
-      font-size: 14px;
-    }
+  /* Products */
+  .products { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; margin-top:60px; }
+  .product-card { border:1px solid #fff; padding:30px 20px; width:200px; text-align:center; background:rgba(0,0,0,0.6); transition:0.3s; }
+  .product-card:hover { background:#0ff; color:#000; border-color:#0ff; transform:translateY(-5px); }
+  .product-card h4 { margin-bottom:10px; font-size:24px; letter-spacing:2px; }
+  .product-card p { font-size:14px; color:#aaa; }
+  .product-card:hover p { color:#000; }
 
-    @media(max-width:768px){
-      header h2 { font-size: 50px; }
-      .signup input { width: 100%; margin-bottom: 10px; }
-      .signup button { width: 100%; }
-      .products { flex-direction: column; gap: 20px; }
-    }
-  </style>
+  footer { padding:40px; text-align:center; color:#666; font-size:14px; }
+
+  @media(max-width:768px){
+    header h2 { font-size:50px; }
+    .signup input { width:100%; margin-bottom:10px; }
+    .signup button { width:100%; }
+    .products { flex-direction:column; gap:20px; }
+  }
+</style>
 </head>
 <body>
 
@@ -201,19 +112,14 @@
 <section id="contact">
   <h3>STAY CONNECTED</h3>
   <p>Sign up to get notified about drops.</p>
-
-  <!-- Proper email form using Formspree -->
   <form class="signup" action="https://formspree.io/f/yourformid" method="POST">
     <input type="email" name="email" placeholder="Enter your email" required />
     <button type="submit">SIGN UP</button>
   </form>
-
-  <!-- Contact buttons -->
   <div class="contact-buttons">
     <a href="https://wa.me/60184739157" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
     <a href="https://www.instagram.com/10_xrawad" target="_blank"><i class="fab fa-instagram"></i>Instagram DM</a>
   </div>
-
   <p style="margin-top:40px; font-size:13px; color:#777;">
     Official domain coming soon: <strong>hazwad.com</strong>
   </p>
